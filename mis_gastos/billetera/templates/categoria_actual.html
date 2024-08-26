@@ -1,0 +1,36 @@
+{% extends 'main/billetera_main.html' %}
+{% load static %}
+
+
+{% block link %}<link rel="stylesheet" href="{% static '/styles/main.css' %}">{% endblock link %}
+{% block title %}<title>ingresos</title>{% endblock title %}
+ 
+{% block nav_items %}
+    <li class="crear"><a href="/billetera/{{billetera.pk}}/{{tipo_categoria}}/{{categoria.pk}}/crear_ingreso_gasto">Crear {{categoria.tipo_categoria}}</a></li>
+{% endblock nav_items %}
+
+{% block content %}
+<div class="contenido" >
+    <h2>Categoría: {{categoria.nombre_categoria}}</h2>
+    <div class="divisor">
+    </div>
+    <h3 class="subtitulo">{{categoria.tipo_categoria}} de {{billetera.nombre_billetera}}</h3>
+    <table>
+        <tr class="titulos_campos">
+            <td>id</td>
+            <td>descripción</td>
+            <td>valor</td>
+        </tr>
+        {% for i in ingresos_o_gastos %}
+        <tr>
+            <td>{{i.pk}}</td>
+            <td>{{i.descripcion}}</td>
+            <td>{{i.valor}}</td>
+            <td class="contenedor_eliminar_ingreso_gasto"><a class="eliminar_ingreso_gasto" href="/billetera/{{billetera.pk}}/{{categoria.tipo_categoria}}/{{categoria.pk}}/{{i.pk}}/eliminar_ingreso_gasto">❌</a></td>
+            <td class="contenedor_modificar_ingreso_gasto"><a class="modificar_ingreso_gasto" href="/billetera/{{billetera.pk}}/{{categoria.tipo_categoria}}/{{categoria.pk}}/{{i.pk}}/modificar_ingreso_gasto">✏️</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</div>
+{% endblock content %}

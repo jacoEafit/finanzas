@@ -1,0 +1,59 @@
+{% extends 'main/ahorros_main.html' %}
+{% load static %}
+
+{% block link %}<link rel="stylesheet" href= "{% static '/styles/estilos_ahorros.css' %}">{% endblock link %}
+{% block title %}<title>ahorro_actual</title>{% endblock title %}
+    
+
+    {% block nav_items %}
+    <li class="crear"><a href="/ahorros/{{ahorro.pk}}/crear_inversion">Crear inversión</a></li>
+    {% endblock nav_items %}
+    
+    {% block content %}
+    <h1 id="titulo_ahorro_actual">{{ahorro.nombre_ahorro}}</h1>
+    <div id="contenido_ahorro_actual">
+        <div id="contenedor_info_ahorro">
+            <h2 id="monto">Monto: ${{ahorro.cantidad_dinero}}</h2>
+            <h4 id="asociadas_subtitulo">Billeteras asociadas:</h4>
+
+            {% if billeteras_ahorro %}
+                <ul>
+                    {% for billetera in billeteras_ahorro %}
+                         <li id="contenedor_billetera_asociada"><a id="link_billetera_asociada" href="/billetera/{{billetera.pk}}">▹{{billetera.nombre_billetera}}</a></li> 
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div id="contenedor_sin_billeteras">
+                    <a href="/billetera/crear_billetera" id="sin_billeteras2">Sin billeteras. Créalas aquí...</a> 
+                </div>
+            {% endif %}
+        </div>
+        <div id="contenedor_tabla_inversiones">
+            <table>
+                <tr id="contenedor_titulo_inversiones">
+                    <p id="titulo_inversiones">Inversiones</p>
+                </tr>
+                <tr class="titulos_campos">
+                    <td>Nombre inversión</td>
+                    <td>Tipo inversión</td>
+                    <td>Valor inversión</td>
+                    <td>Fecha</td>
+                    <td>ROI</td>
+                </tr>
+                {% for inversion in inversiones_ahorro %}
+                <tr>
+                    <td>{{inversion.nombre_inversion}}</td>
+                    <td>{{inversion.tipo_inversion}}</td>
+                    <td>{{inversion.valor_inversion}}</td>
+                    <td>{{inversion.fecha_creacion}}</td>
+                    <td>{{inversion.ROI}}</td>
+                    <td class="eliminar"><a class="eliminar"href="/ahorros/{{ahorro.pk}}/{{inversion.pk}}/eliminar_inversion">❌</a></td>
+                    <td class="modificar"><a class="modificar" href="/ahorros/{{ahorro.pk}}/{{inversion.pk}}/modificar_inversion">✏️</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        
+    </div>
+    {% endblock content %}

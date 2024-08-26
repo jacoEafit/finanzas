@@ -1,0 +1,54 @@
+{% extends 'main/home_main.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static '/styles/home_styles.css' %}">
+<link rel="stylesheet" href="{% static '/styles/home_content_styles.css' %}">
+{% endblock %}
+
+{% block title %}<title>home</title>{% endblock %}
+
+
+{% block content %}
+    <div id="home_content">
+
+        <div id='block1'>
+            <h3 id="home_title1" class="home_title">¿Qué es ContabiliApp?</h3>
+            <div id="home_paragraph1_container">
+                <p class="home_paragraph">Es una herramienta diseñada para ayudarte a llevar un registro de tus finanzas y realizar tus operaciones contables de manera eficiente.</p>
+                <p class="home_paragraph">Cabe resaltar que su uso es totalmente gratuito, además hacemos énfasis en la privacidad y seguridad de tus datos</p>
+            </div>
+            <img id="image1" src="{% static 'imagen_contabilidad.png' %}" alt="imagen_contabilidad.png">
+        </div> 
+
+        <div id='block2'>
+            <h3 id="home_title2" class="home_title">Funcionalidades que te podemos ofrecer:</h3>
+
+            <div id="card1">
+            <p id="home_paragraph1">Permite registrar y clasificar los ingresos, como salarios, intereses, alquileres, entre otros.</p>
+            <img id="image_card1" src="{% static 'image_card1.png' %}" alt="imagen_ahorros">
+            </div>
+
+            <div id="card2">
+            <p id="home_paragraph2">Permite registrar y clasificar los gastos, como facturas, compras, impuestos, entre otros.</p>
+            <img id="image_card2" src="{% static 'imagen_card2.png' %}" alt="imagen_ahorros">
+            </div>
+
+            <div id="card3">
+            <p id="home_paragraph3">Permite clasificar los ingresos y gastos en diferentes categorías, como alimentos, vivienda, transporte, entre otros.</p>
+            <img id="image_card3" src="{% static 'image_card3.png' %}" alt="imagen_ahorros">
+            </div>
+
+            <div id="card4">
+            <p id="home_paragraph4">Permite la creación de ahorros los cuales pueden contener activos ó pasivos.</p>
+            <img id="image_card4" src="{% static 'image_card4.png' %}" alt="imagen_ahorros">
+            </div>
+
+            
+        </div>
+
+    </div>  
+{% endblock %}   
+    
+    
+

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/styles/main.css' %}">
+    <title>crear_billetera</title>
+</head>
+<body>
+
+    
+    <div class="contenido">
+        <h1 id="titulo_crear_billetera">Crea tu nueva billetera...</h1>
+
+        <form method="POST" action="{% url 'crear_billetera' %}">
+            {% csrf_token %} 
+            <label for="nombre_billetera">Nombre billetera:</label>
+            <input type="text" name="nombre_billetera" id="total_dinero" required>
+
+            <label for="total_dinero">Cantidad dinero:</label>
+            <input type="number" name="total_dinero" id="total_dinero" required>
+            
+            <label for="ahorro_id">Ahorro asociado</label>
+            <select name="ahorro_id" id="ahorro_id">
+                {% for ahorro in ahorros %}
+                    <option value="{{ahorro.pk}}">{{ahorro.nombre_ahorro}}</option>
+                {% endfor %}
+            </select>
+
+            <button id="boton_crear_billetera">
+                Save
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

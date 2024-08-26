@@ -1,0 +1,14 @@
+{% extends 'main/billetera_main.html' %}
+{% load static %}
+    {% block link %}<link rel="stylesheet" href= "{% static '/styles/main.css' %}">{% endblock %}
+    {% block title %}<title>billetera_actual</title>{% endblock %}
+    
+    {% block content %}
+    <div class="contenido">
+        <h1 class="titulo">{{nombre_billetera}}</h1>
+        <p>~ Tu saldo disponible es: ${{billetera.total_dinero}}</p>
+        <a id="link_ingresos" href="{{billetera_pk}}/ingresos">Ingresos</a>
+        <a id="link_gastos" href="{{billetera_pk}}/gastos">Gastos</a>
+    </div>
+    {% endblock content %}
+

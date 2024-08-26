@@ -1,0 +1,423 @@
+:root{
+    --color1:#0b0633;
+    --color2: #e3f6f5;
+    --color3:  #ff4949;
+    --color4:#ffffff;
+    --color5:black;
+    --color6: white;
+    --color7: #A72AAB;
+    --color8:whitesmoke;
+}
+
+body{
+    background-color:var(--color8);
+    width:95vw;
+    padding:0;
+    margin:0;
+}
+
+
+
+
+.contenido{
+    margin-top:50px;
+    font-family:'Courier New', Courier, monospace;
+    margin-left:20%;
+}
+.divisor{
+    height:20px;
+}
+
+.titulo{
+    margin-left:225px;
+}
+
+.imagen_gasto_ingreso{
+    margin-left:265px;
+    width:70px;
+    height:70px;
+
+}
+
+.subtitulo{
+    margin-left:215px;
+    color:var(--color1)
+}
+
+td{
+    width:200px;
+    height:30px;
+    border-color: var(--color1);
+    border-radius: 10px;
+    border-style: solid;
+}
+
+table{
+    font-size: large;
+}
+
+.titulos_campos{
+    color:var(--color2);
+    background-color: var(--color1);
+}
+
+.crear{
+    grid-column:7/8;
+    grid-row: 2/3;
+    font-family:monospace;
+    font-size:x-small;
+
+}
+
+
+.elemento_lista_container{
+    padding-left:120px;
+    list-style: none;
+    width:250px;
+    height:20px;
+    margin:2px;
+}
+
+.elemento_lista_container a{
+    text-decoration:none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.elemento_lista_container a:hover{
+    color:var(--color3);
+}
+
+#contenedor_billeteras{
+    width:500px;
+    height:100vh;
+    border-color:var(--color1);
+    border-style:solid;
+    border-radius:50px;
+    border-width: 5px;
+}
+
+#titulo_billeteras{
+    padding-left:100px;
+}
+
+#nombre_billetera{
+    padding-left:30px;
+}
+
+p{
+    font-size: large;
+    font-weight: 800;
+}
+
+label{
+    font-size: large;
+    font-weight: 800;
+}
+
+button{
+    color:var(--color2);
+    background-color:var(--color1);
+    border-style:none;
+    border-width: 1px;
+    height: 40px;
+    width: 70px;
+    border-radius:10px;
+}
+
+button:hover{
+    color:var(--color1);
+    background-color:var(--color4);
+}
+
+#titulo_crear_billetera{
+    padding-left:100px;
+    padding-bottom: 50px;
+}
+
+input{
+    width:200px;
+    height:28px;
+    border-radius:100px;
+    border-style: solid;
+    border-color:var(--color1);
+}
+
+.input1{
+    grid-column: 2/3;
+    grid-row:2/3;
+}
+
+.input2{
+    grid-column: 2/3;
+    grid-row:4/5;
+}
+
+.input3{
+    grid-column: 2/3;
+    grid-row:6/7;
+}
+
+.input4{
+    grid-column: 2/3;
+    grid-row:8/9;
+}
+
+#link_ingresos{
+    display:inline-flex;
+    justify-content: center;
+    width:90px;
+    height:30px;
+    border-color:var(--color1);
+    border-radius:5px;
+    border-style: solid;
+    text-decoration: none;
+    color:var(--color1);
+    background-color: var(--color1);
+    font-size: large;
+    color:var(--color4);
+}
+
+#link_gastos{
+    display:inline-flex;
+    justify-content:center;
+    margin-left: 50px;
+    width:90px;
+    height:30px;
+    border-color:var(--color1);
+    border-radius:5px;
+    border-style: solid;
+    text-decoration: none;
+    background-color: var(--color1);
+    font-size:large ;
+    color:var(--color4);
+}
+
+#link_gastos:hover{
+    background-color: var(--color4);
+    color:var(--color1);
+}
+
+#link_ingresos:hover{
+    background-color: var(--color4);
+    color:var(--color1);
+}
+
+#titulo_mis_categorias{
+    padding-left:100px;
+    color:var(--color1);
+    font-size: x-large;
+}
+
+#subtitulo_mis_categorias{
+    padding-left:110px;
+    color:var(--color1);
+    font-size: large;
+    font-weight: 700;
+    color:var(--color7);
+}
+
+#contenedor_categorias{
+    width:500px;
+    height:100vh;
+    border-color:var(--color1);
+    border-style:solid;
+    border-radius:50px;
+    border-width: 5px;
+}
+
+.contenedor_elemento_categoria{
+    list-style: circle;
+}
+.elemento_categoria{
+    text-decoration:none;
+    color:var(--color1);
+    font-size:medium;
+    font-weight:700;
+    color:var(--color1);
+}
+
+.elemento_categoria:hover{
+    text-decoration:none;
+    color:var(--color3);
+    font-size:medium;
+    font-weight:700;
+}
+
+#titulo_crear_ingreso{
+    padding-left: 10px;
+}
+
+#subtitulo_crear_ingreso{
+    padding-left: 110px;
+}
+
+#contenedor_categoria_actual{
+    display:grid;
+    grid-template-rows:1fr 1fr 1fr 1fr;
+}
+
+/* Estilos para formularios: */
+form{
+    padding-left:50px;
+    width:600px;
+    display:grid;
+    grid-template-rows:repeat(5,1fr);
+    grid-template-columns: repeat(2,1fr); 
+}
+
+
+.form_input1{
+    grid-column:2/3;
+    grid-row:1/2;
+}
+
+
+.form_input2{
+    grid-column:2/3;
+    grid-row:2/3;
+}
+
+
+.form_input3{
+    grid-column:2/3;
+    grid-row:3/4;
+}
+
+
+.form_input4{
+    grid-column:2/3;
+    grid-row:4/5;
+}
+
+select{
+    width:210px;
+    height:30px;
+    border-radius:100px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#boton_crear_billetera{
+    margin-left:200px;
+    margin-top:10px;
+}
+
+.link_pagina_actual{
+    display:flex;
+    justify-content: center;
+    height:30px;
+    width:90px;
+    border-style:solid;
+    border-color:var(--color4);
+    border-width: 2px;
+    background-color:var(--color);
+}
+
+
+.link_pagina_actual:hover{
+    display:flex;
+    justify-content: center;
+    border-style:solid;
+    border-color:var(--color3);
+    border-width: 2px;
+}
+
+.contenedor_billeteras{
+    display:grid;
+    grid-template-columns:60% 5% 5%;
+}
+
+.contenedor_elementos{
+    grid-column:1/2;
+}
+
+.eliminar_billetera{
+    text-decoration:none;
+    grid-column:2/3;
+}
+
+.modificar_billetera{
+    text-decoration:none;
+    grid-column:3/4;
+}
+
+.categorias_container{
+    display:grid;
+    grid-template-columns:60% 5% 5%;
+}
+
+.eliminar_categoria{
+    text-decoration:none;
+    grid-column:2/3;
+}
+
+.modificar_categoria{
+    text-decoration:none;
+    grid-column:3/4;
+}
+
+.contenedor_eliminar_ingreso_gasto{
+    border-style:none;
+    width:20px;
+
+}
+
+.contenedor_modificar_ingreso_gasto{
+    border-style:none;
+}
+
+.eliminar_ingreso_gasto{
+    text-decoration:none;
+}
+
+.modificar_ingreso_gasto{
+    text-decoration:none;
+}
+
+/* Estilos de menú desplegable de user */
+.dropdown {
+    grid-row:2/3;
+    grid-column:8/9;
+    display: inline-block;
+    position: relative;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    width: 80%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+    background-color: var(--color4);
+  }
+  .dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+  }
+
+  .user_image{
+    width:30px;
+    height:30px;
+  }
+
+.username{
+    grid-row: 2/3;
+    grid-column: 7/8;
+    font-family:cursive;
+    font-size:x-small;
+}
+
+.logo_contabiliapp{
+    width:250px;
+    height:80px;
+    
+}

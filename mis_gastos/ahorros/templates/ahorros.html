@@ -1,0 +1,30 @@
+{% extends 'main/ahorros_main.html' %}
+{% load static %}
+
+{% block link %}<link rel="stylesheet" href="{% static '/styles/estilos_ahorros.css' %}">{% endblock link %}
+{% block title %}<title>ahorros</title>{% endblock title %}
+    
+    
+
+    {% block nav_items %}
+    <li class="crear"><a href={% url 'crear_ahorro' %}>Crear ahorro</a></li>
+    {% endblock %}
+    
+    {% block content %}
+    <div class="contenido" id="contenedor_ahorros">
+        <h1 id="titulo_ahorros">Ahorros...</h1>
+        <h2 id="subtitulo_ahorros">Tus ahorros son:</h2>
+
+        <ul class="coin">
+        {% for ahorro in ahorros %}
+            <div class="contenedor_ahorros">
+                <li class="contenedor_elemento_categoria"><a id="link_ahorro"href="/ahorros/{{ahorro.pk}}">{{ahorro.nombre_ahorro}}</a></li>
+                <a class="eliminar_ahorro"href="/ahorros/{{ahorro.pk}}/eliminar_ahorro">❌</a>
+                <a class="modificar_ahorro"href="/ahorros/{{ahorro.pk}}/modificar_ahorro">✏️</a>
+            </div>
+                {% endfor %}
+        </ul>
+    </div>
+    {% endblock content %}
+
+

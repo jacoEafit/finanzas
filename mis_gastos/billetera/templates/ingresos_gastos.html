@@ -1,0 +1,32 @@
+{% extends 'main/billetera_main.html' %}
+{% load static %}
+
+    {% block link %}<link rel="stylesheet" href="{% static '/styles/main.css' %}">{% endblock link %}
+    {% block title %}<title>ingresos_gastos</title>{% endblock title %}
+    
+    
+
+    {% block nav_items %}
+        <li class="crear">
+            <a href="/billetera/{{billetera.pk}}/{{tipo_categoria}}/crear_categoria">Crear categoría</a>
+        </li>
+    {% endblock nav_items %}
+    
+    {% block content %}
+    <div class="contenido" id="contenedor_categorias">
+        <h1 id="titulo_mis_categorias">Billetera {{billetera.nombre_billetera}}</h1>
+        <h2 id="subtitulo_mis_categorias">Mis categorías de {{tipo_categoria}}...</h2>
+    
+        
+        <ul>
+            {% for categoria in categorias %}
+                <div class="categorias_container">
+                    <li class="contenedor_elemento_categoria"><a class="elemento_categoria" href="/billetera/{{billetera.pk}}/{{tipo_categoria}}/{{categoria.pk}}">{{categoria.nombre_categoria}}</a></li>
+                    <a class="eliminar_categoria" href="/billetera/{{billetera.pk}}/{{categoria.tipo_categoria}}/{{categoria.pk}}/eliminar_categoria">❌</a>
+                    <a class="modificar_categoria" href="/billetera/{{billetera.pk}}/{{categoria.tipo_categoria}}/{{categoria.pk}}/modificar_categoria">✏️</a>
+                </div>    
+            {% endfor %}
+        </ul>
+    </div>
+    {% endblock content %}
+
